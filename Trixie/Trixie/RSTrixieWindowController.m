@@ -175,7 +175,7 @@
 	
 	if( DOM_ELEMENT_NODE == [parent nodeType]) {
 		//	NSLog(@"%s- [%04d] tagging: %@", __PRETTY_FUNCTION__, __LINE__, [(DOMElement *)parent tagName]);
-		[(DOMElement*)parent setAttribute:@"data-trixie-id" value:[NSString stringWithFormat:@"%i",idnum++]];
+		[(DOMElement*)parent setAttribute:@"data-trixie-id" value:[NSString stringWithFormat:@"%ld",idnum++]];
 	}
 	
 	DOMNodeList * list = [parent childNodes];

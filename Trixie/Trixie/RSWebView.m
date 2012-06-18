@@ -42,7 +42,7 @@
 				// if we have a valid idtag skip the next op
 			}
 			else {
-				[(DOMElement*)node setAttribute:kRSTrixieIdKeyName value:[NSString stringWithFormat:@"%d",idnum++]];
+				[(DOMElement*)node setAttribute:kRSTrixieIdKeyName value:[NSString stringWithFormat:@"%ld",idnum++]];
 			}			
 		}
 		return [[(DOMElement*)node getAttribute:kRSTrixieIdKeyName] integerValue];
@@ -83,7 +83,7 @@
 		[[self superview] addSubview:temp];
 	}
 
-	if([taggedNodes objectForKey:[NSString stringWithFormat:@"%d",locatorView.tag]]){
+	if([taggedNodes objectForKey:[NSString stringWithFormat:@"%ld",locatorView.tag]]){
 		//	the object is already in our cache
 		//	NSLog(@"%s- [%04d] %@", __PRETTY_FUNCTION__, __LINE__, @" already cached node - ");
 	}
@@ -93,13 +93,13 @@
 			[[self superview] addSubview:locatorView];
 			[locatorView setNeedsDisplay:YES];
 			
-			[viewControllers setObject: ctlr forKey:[NSString stringWithFormat:@"%d",locatorView.tag]];
+			[viewControllers setObject: ctlr forKey:[NSString stringWithFormat:@"%ld",locatorView.tag]];
 			
 			if( DOM_TEXT_NODE == [(DOMElement*)node nodeType]) {
-				[taggedNodes setObject:[(DOMElement*)node parentNode] forKey:[NSString stringWithFormat:@"%d",locatorView.tag]];
+				[taggedNodes setObject:[(DOMElement*)node parentNode] forKey:[NSString stringWithFormat:@"%ld",locatorView.tag]];
 			}
 			else {
-				[taggedNodes setObject: node forKey:[NSString stringWithFormat:@"%d",locatorView.tag]];
+				[taggedNodes setObject: node forKey:[NSString stringWithFormat:@"%ld",locatorView.tag]];
 			}
 		}
 	}
@@ -135,8 +135,8 @@
 - (IBAction) removeLocatorFromDict:(id)sender { 
 	RSLocatorView * view = sender;
 	[self removeBoundingBox];
-	[viewControllers removeObjectForKey: [NSString stringWithFormat:@"%d",view.tag]];
-	[taggedNodes removeObjectForKey: [NSString stringWithFormat:@"%d",view.tag]];
+	[viewControllers removeObjectForKey: [NSString stringWithFormat:@"%ld",view.tag]];
+	[taggedNodes removeObjectForKey: [NSString stringWithFormat:@"%ld",view.tag]];
 	NSLog(@"%s- [%04d] object removed for tag", __PRETTY_FUNCTION__, __LINE__ );
 }
 

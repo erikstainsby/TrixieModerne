@@ -40,7 +40,7 @@
 	[[self.menu itemWithTitle:@"Delete"] setRepresentedObject:self];
 	
 	self.centerPoint = NSMakePoint(self.frame.size.width/2, self.frame.size.height/2);
-}
+} 
 
 - (IBAction) requestPopover:(id)sender {
 	NSLog(@"%s- [%04d] %@", __PRETTY_FUNCTION__, __LINE__, @"");

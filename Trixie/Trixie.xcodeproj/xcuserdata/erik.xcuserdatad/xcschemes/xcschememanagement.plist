@@ -7,11 +7,21 @@
 		<key>Trixie.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>40</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0364F17A158963820051DBD0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0364F40A15897B900051DBD0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>03CA2C8A1571EE5C00347708</key>
 		<dict>
 			<key>primary</key>
